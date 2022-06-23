@@ -1,0 +1,65 @@
+<div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <router-link to="/" class="h1"><b>Cafetero</b></router-link>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg">Ingresa a tu cuenta</p>
+
+            <form @submit.prevent="loginByAuth">
+                <app-input
+                    icon="envelope"
+                    class="mb-3"
+                    type="email"
+                    placeholder="Correo"
+                    autocomplete="off"
+                    v-model="email"
+                />
+                <app-input
+                    icon="lock"
+                    class="mb-3"
+                    type="password"
+                    placeholder="Contraseña"
+                    autocomplete="off"
+                    v-model="password"
+                />
+
+                <div class="row">
+                    <div class="col-7">
+                        <app-checkbox v-model="rememberMe">
+                            Recuérdame
+                        </app-checkbox>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-5">
+                        <app-button
+                            class="btn-primary"
+                            type="submit"
+                            block="true"
+                            :loading="isAuthLoading"
+                        >
+                        Ingresar
+                        </app-button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+
+
+            <p class="mb-1">
+                <router-link to="/forgot-password">
+                    Olvidé mi contraseña
+                </router-link>
+            </p>
+            <p class="mb-0">
+                <router-link to="/register" class="text-center">
+                    Crear cuenta
+                </router-link>
+            </p>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>

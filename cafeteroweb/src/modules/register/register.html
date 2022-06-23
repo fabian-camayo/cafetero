@@ -1,0 +1,66 @@
+<div class="register-box">
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <router-link to="/" class="h1"><b>Admin</b>LTE</router-link>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg">Register a new membership</p>
+
+            <form @submit.prevent="registerByAuth">
+                <app-input
+                    icon="envelope"
+                    class="mb-3"
+                    type="email"
+                    placeholder="Email"
+                    autocomplete="off"
+                    v-model="email"
+                />
+                <app-input
+                    icon="lock"
+                    class="mb-3"
+                    type="password"
+                    placeholder="Password"
+                    autocomplete="off"
+                    v-model="password"
+                />
+                <app-input
+                    icon="lock"
+                    class="mb-3"
+                    type="password"
+                    placeholder="Retype password"
+                    autocomplete="off"
+                    v-model="rePassword"
+                />
+                <div class="row">
+                    <div class="col-7">
+                        <app-checkbox v-model="agreeTerms">
+                            I agree to the <a href="#">terms</a>
+                        </app-checkbox>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-5">
+                        <app-button
+                            class="btn-primary"
+                            type="submit"
+                            block="true"
+                            :loading="isAuthLoading"
+                            
+                        >
+                            Register
+                        </app-button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+
+
+            <router-link to="/login" class="text-center">
+                I already have a membership
+            </router-link>
+        </div>
+        <!-- /.form-box -->
+    </div>
+    <!-- /.card -->
+</div>
+<!-- /.register-box -->
